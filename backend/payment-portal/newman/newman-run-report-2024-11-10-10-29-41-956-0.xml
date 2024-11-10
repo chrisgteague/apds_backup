@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="APDS Collection" tests="1" time="0.126">
+  <testsuite name="Login Test" id="e7c7677f-be54-4336-84fb-d19c2f7bfb7c" timestamp="2024-11-10T10:29:41.729Z" tests="2" failures="0" errors="0" time="0.126">
+    <testcase name="Status code is 200" time="0.126" classname="LoginTest"/>
+    <testcase name="Response contains 'status' field with value 'success'" time="0.126" classname="LoginTest"/>
+  </testsuite>
+</testsuites>
