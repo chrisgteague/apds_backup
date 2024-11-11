@@ -57,7 +57,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost/auth/login",
+					"raw": "http://localhost:80/auth/login",
 					"protocol": "https",
 					"host": [
 						"localhost"
