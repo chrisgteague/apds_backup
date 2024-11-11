@@ -46,16 +46,15 @@ jobs:
           name: Start Server
           command: |
             cd backend/payment-portal
-            npm start &
-          background: true  # Run the server in the background
+            npm start &  # Run the server in the background
       - run:
           name: Wait for Server to Start
-          command: sleep 10  # Adjust this time if the server needs more or less time to start
+          command: sleep 20  # Adjust this time if the server needs more or less time to start
       - run:
           name: Run Newman Tests
           command: |
             cd backend/payment-portal
-            BASE_URL="$BASE_URL" npm run newman-test || { echo 'Newman tests failed'; exit 1; }
+            newman run ./collection/APDS_Collections.json --reporters cli,junit --env-var BASE_URL="$BASE_URL" --insecure || { echo 'Newman tests failed'; exit 1; }
 
 workflows:
   version: 2
