@@ -54,8 +54,7 @@ jobs:
           name: Run Newman Tests
           command: |
             cd backend/payment-portal
-            newman run ./collection/APDS_Collections.json --reporters cli,junit --env-var BASE_URL="$BASE_URL" --insecure || { echo 'Newman tests failed'; exit 1; }
-
+            newman run ./collection/APDS_Collections.json --reporters cli,junit --env-var BASE_URL="http://localhost:80" --insecure || { echo 'Newman tests failed'; exit 1; }
 workflows:
   version: 2
   main-workflow:
