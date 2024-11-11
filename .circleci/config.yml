@@ -46,7 +46,7 @@ jobs:
           name: Start Server
           command: |
             cd backend/payment-portal
-            npm start &  # Run the server in the background
+            node index.js &  # Run the server in the background
       - run:
           name: Wait for Server to Start
           command: sleep 20  # Adjust this time if the server needs more or less time to start
