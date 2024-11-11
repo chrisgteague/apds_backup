@@ -43,10 +43,16 @@ jobs:
             cd backend/payment-portal
             npm install --verbose || { echo 'npm install failed'; exit 1; }
       - run:
+          name: Start Server
+          command: |
+            cd backend/payment-portal
+            npm start &
+          background: true  # Run the server in the background
+      - run:
           name: Run Newman Tests
           command: |
             cd backend/payment-portal
-            npm run newman-test || { echo 'Newman tests failed'; exit 1; }
+            BASE_URL="$BASE_URL" npm run newman-test || { echo 'Newman tests failed'; exit 1; }
 
 workflows:
   version: 2
